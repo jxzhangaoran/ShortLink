@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<title>欢迎 | 短链接服务</title>
+		<link rel="stylesheet" href="dep/layui/css/layui.css" />
+		<link rel="stylesheet" href="css/index.css">
+		<link rel="stylesheet" href="css/particle.css">
+		<link rel="shortcut icon" href="resources/icon/link.ico" type="image/x-icon">
+	</head>
+	<div id="particlebackground"></div>
+	<body>
+		<header>
+			<div class="layui-anim layui-anim-scaleSpring" data-anim="layui-anim-scaleSpring" id="link-icon">
+				<i class="layui-icon layui-icon-link">　</i>
+			</div>
+			<h1 id="welcometitle">　欢迎使用短链接服务</h1>
+			<hr class="layui-bg-green">
+		</header>
+
+		<main>
+			<div class="layui-container">
+				<div class="layui-row">
+					<div class="layui-col-xs12">
+						<div class="layui-tab layui-tab-card" id="container-white">
+							<ul class="layui-tab-title">
+								<li class="layui-this">短链接转换</li>
+								<li>关于本站</li>
+							</ul>
+
+							<div class="layui-tab-content">
+								<div class="layui-tab-item layui-show">
+									<form class="layui-form">
+										<div class="layui-form-item layui-form-text">
+											<div class="layui-row">
+												<div class="layui-col-md9">
+													<div class="">
+														<textarea id="originlink" name="originlink" lay-verify="required|originlink" placeholder="请输入要转换的长链接..."
+														 class="layui-textarea"></textarea>
+													</div>
+												</div>
+												<div class="layui-col-md3">
+													<button id="generate" type="submit" class="layui-btn layui-btn-lg layui-btn-radius layui-btn-normal"
+													 lay-submit lay-filter="submit">点击生成</button>
+													<button id="reset" type="reset" class="layui-btn layui-btn-lg layui-btn-radius layui-btn-danger layui-btn-disabled"
+													 disabled="disabled">清空内容</button>
+													<button id="copy" type="button" class="layui-btn layui-btn-lg layui-btn-radius layui-btn-disabled"
+													 data-clipboard-target="#shortlink" disabled="disabled">复制结果</button>
+													<button id="jump" type="button" class="layui-btn layui-btn-lg layui-btn-radius layui-btn-warm layui-btn-disabled"
+													 disabled="disabled">访问链接</button>
+												</div>
+											</div>
+										</div>
+									</form>
+
+									<br>
+									<blockquote class="layui-elem-quote layui-quote-nm" id="shortlink">短链接将显示在此...</blockquote>
+									<div class="layui-collapse">
+										<div class="layui-colla-item">
+											<h2 class="layui-colla-title"><strong>什么是短链接</strong><i class="layui-icon layui-icon-help"></i></h2>
+											<div class="layui-colla-content">
+												<p>
+													　　短网址服务，可能很多朋友都已经不再陌生，
+													特别是在微博应用中十分普遍，比如，当我们在腾讯、
+													新浪微博发微博时有时发很长的网址连接，但由于微博只限制140个字，
+													所以微博就自动把您发的长网址给转换成短网址了。
+												</p>
+												<br>
+												<p>
+													　　短网址通常使用“比较少字符的网址”+“/”+“代码”，
+													打开短网址网页通常会直接跳转到你要缩短的网址（常见），
+													或者几秒广告后在跳转。比如向百度短网址可以自定义后缀，
+													有些短网址还可以进行泛域名解析，十分方便大家使用。
+												</p>
+												<hr class="layui-bg-gray"><br>
+												<p>以上内容摘自：<a href="https://baike.baidu.com/item/%E7%9F%AD%E7%BD%91%E5%9D%80/9051223?fr=aladdin" target="_blank">百度百科</a></p>
+												
+											</div>
+										</div>
+										<div class="layui-colla-item">
+											<h2 class="layui-colla-title"><strong>为什么要使用短链接</strong><i class="layui-icon layui-icon-help"></i></h2>
+											<div class="layui-colla-content">
+												<span>
+													<p>一般而言，使用短链接的优势有以下几点：</p>
+													<br>
+													<p>1、易于阅读，看起来整洁干净，提高用户体验和点击率，利于复制粘贴。</p>
+													<p>比如</p>
+													<p><a href="https://mp.weixin.qq.com/s?__biz=MzA5NDI5NDI3Nw==&amp;mid=2649497809&amp;idx=2&amp;sn=381d02312b0c49e9cc406436f963efc5&amp;chksm=884858bbbf3fd1ad6f431e94ca9dd0543d817a3856bf857807cb088dda9b9aa855720d4177eb&amp;mpshare=1&amp;scene=23&amp;srcid=1012SKaGEy75jnX0omALmfx1#rd"
+														 rel="nofollow" target="_blank" id="examplelonglink">https://mp.weixin.qq.com/s?__biz=MzA5NDI5NDI3Nw==&amp;mid=2649497809&amp;idx=2&amp;sn=381d02312b0c49e9cc406436f963efc5&amp;chksm=884858bbbf3fd1ad6f431e94ca9dd0543d817a3856bf857807cb088dda9b9aa855720d4177eb&amp;mpshare=1&amp;scene=23&amp;srcid=1012SKaGEy75jnX0omALmfx1#rd</a>
+														<br>和<br><a href="http://url.cn/5MMEX3D" rel="nofollow">http://url.cn/5MMEX3D</a>，</p>
+													<p>两者都是指向谷歌大叔实训营招生简介，但是前者太不美观了，很像诈骗网站的链接，用户从心里是排斥反感的，尤其是用户需要复制粘贴时，更是麻烦。</p>
+													<br>
+													<p>2、减少url占用空间</p>
+													<p>很明显的一个例子：</p>
+													<p>玩社交的朋友们都知道，Twitter对帖子的字符数有严格的控制，如果你的url非常长，那么你的推文还能写几个字呢？</p>
+													<br>
+													<p>3、便于链接追踪</p>
+													<p>许多提供短网址服务的平台同时提供链接追踪（Link Tracking）服务，不过一般都是付费的。</p>
+													<p>通过每个平台生成的短链接追踪信息，你可以更好的评估各项营销活动的成效，比如你玩社交的话，可以twitter，Facebook，Pinterest等都各自使用一种短网址。</p>
+													<br>
+													<p>4、一定程度上保护网站链接</p>
+													<p>我们在玩Facebook，领英等社交时，有些需要分享一些带有我们网站链接的帖子和消息，</p>
+													<p>尤其对于小白来说，如果发的内容次数过多，并且毫无互动可言或者直接被人举报多次，那么你的网址就会被社交平台标记，</p>
+													<p>一旦标记，链接权重就会受影响，后面再投社交广告时就有麻烦了。</p>
+													<p>适当的使用短网址可以减小风险，但如果你过度发布垃圾内容，那也是无救的。</p>
+													<hr class="layui-bg-gray"><br>
+													<p>以上内容摘自：<a href="http://www.mamicode.com/info-detail-2707005.html" target="_blank">http://www.mamicode.com/info-detail-2707005.html</a></p>
+												</span>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="layui-tab-item">
+									<div id="abouttitle">
+										<h2 id="author">Made by Matsk.<a href="https://github.com/jxzhangaoran" target="_blank">
+												<i class="layui-icon layui-icon-about"></i></a><br>Deployed on Huawei Cloud.</h2>
+										<div id="rankdiv">
+											<h2>给个五星好评呗~</h2>
+											<div id="rank"></div>
+										</div>
+									</div>
+									<hr class="layui-bg-green">
+									<div class="layui-row">
+										<div class="layui-col-md8">
+											<ul class="layui-timeline">
+												<li class="layui-timeline-item">
+													<i class="layui-icon layui-timeline-axis">&#xe63f;</i>
+													<div class="layui-timeline-content layui-text">
+														<h3 class="layui-timeline-title">2020年2月20日</h3>
+														<p><strong>前端开发，项目基本完成(<span style="color:royalblue">Release Version 1.0</span>)</strong></p>
+														<ul>
+															<li>优化前端显示</li>
+															<li>修复bug</li>
+															<li>发布1.0版本</li>
+														</ul>
+													</div>
+												</li>
+												<li class="layui-timeline-item">
+													<i class="layui-icon layui-timeline-axis">&#xe63f;</i>
+													<div class="layui-timeline-content layui-text">
+														<h3 class="layui-timeline-title">2020年2月11日</h3>
+														<p><strong>项目部署</strong></p>
+														<ul>
+															<li>配置华为云开发环境</li>
+															<li>参数调试</li>
+															<li>项目部署成功，可外部访问</li>
+														</ul>
+													</div>
+												</li>
+												<li class="layui-timeline-item">
+													<i class="layui-icon layui-timeline-axis">&#xe63f;</i>
+													<div class="layui-timeline-content layui-text">
+														<h3 class="layui-timeline-title">2020年2月10日</h3>
+														<p><strong>项目后端开发</strong></p>
+														<ul>
+															<li>后端开发</li>
+															<li>前端初步开发</li>
+															<li>项目基本成型</li>
+														</ul>
+													</div>
+												</li>
+												<li class="layui-timeline-item">
+													<i class="layui-icon layui-timeline-axis">&#xe63f;</i>
+													<div class="layui-timeline-content layui-text">
+														<h3 class="layui-timeline-title">2020年2月9日</h3>
+														<p><strong>项目构思</strong></p>
+														<ul>
+															<li>短链接项目核心算法 - 62进制</li>
+															<li>数据库建模</li>
+														</ul>
+													</div>
+												</li>
+
+												<li class="layui-timeline-item">
+													<i class="layui-icon layui-timeline-axis">&#xe63f;</i>
+													<div class="layui-timeline-content layui-text">
+														<div class="layui-timeline-title">过去</div>
+													</div>
+												</li>
+											</ul>
+
+										</div>
+										<div class="layui-col-md4" id="payimgdiv">
+											<h2 id="supporttitle">您的支持是我最大的动力：）</h2>
+											<img src="resources/image/alipay.jpg" class="payimg" />
+											<img src="resources/image/wechat.png" class="payimg" />
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+		</main>
+		<footer class="layui-footer footer">
+			<p>© 2020 <a href="/">　ShortLinkService　</a>By Matsk</p>
+			<p>
+				<a href="https://gitee.com/Matsk" target="_blank">　码云　</a>
+				<a href="https://github.com/jxzhangaoran" target="_blank">　GitHub　</a>
+				<a href="https://www.layui.com/" target="_blank">　网站前端基于Layui制作　</a>
+			</p>
+		</footer>
+	</body>
+	<script src="dep/jquery-3.4.1.min.js"></script>
+	<script src="dep/jparticle.min.js"></script>
+	<script src="dep/layui/layui.js"></script>
+	<script src="dep/clipboard.min.js"></script>
+	<script src="js/index.js"></script>
+</html>
